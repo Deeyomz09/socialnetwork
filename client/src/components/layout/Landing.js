@@ -13,13 +13,13 @@ const Landing = () => {
           <div className="buttons">
             <Link
               to="/register"
-              class="btn btn-primary"
+              className="btn btn-primary"
             >
               Sign Up
             </Link>
             <Link
               to="/login"
-              class="btn btn-light"
+              className="btn btn-light"
             >
               Login
             </Link>
