@@ -1,6 +1,8 @@
-import React, { Fragment, useState } from 'react';
-
-const Register = () => {
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setAlert } from '../../actions/alert';
+const Register = ({ setAlert }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,12 +15,12 @@ const Register = () => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      console.log('Password do not match');
+      setAlert('Password do not match', 'danger');
     } else {
-      console.log(formData);
+      console.log('Succes');
     }
   };
   return (
@@ -29,7 +31,7 @@ const Register = () => {
       </p>
       <form
         className="form"
-        onSubmit={(e) => onSubmit(e)}
+        onSubmit={onSubmit}
         action="create-profile.html"
       >
         <div className="form-group">
@@ -38,7 +40,7 @@ const Register = () => {
             placeholder="Name"
             name="name"
             value={name}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
@@ -48,7 +50,7 @@ const Register = () => {
             placeholder="Email Address"
             name="email"
             value={email}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
           <small className="form-text">
@@ -62,7 +64,7 @@ const Register = () => {
             placeholder="Password"
             name="password"
             value={password}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
             minLength="6"
           />
@@ -73,7 +75,7 @@ const Register = () => {
             placeholder="Confirm Password"
             name="password2"
             value={password2}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
             minLength="6"
           />
@@ -85,10 +87,10 @@ const Register = () => {
         />
       </form>
       <p className="my-1">
-        Already have an account? <a href="login.html">Sign In</a>
+        Already have an account? <Link to="/login">Sign In</Link>
       </p>
     </section>
   );
 };
 
-export default Register;
+export default connect(null, { setAlert })(Register);
