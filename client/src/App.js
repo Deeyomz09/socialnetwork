@@ -11,6 +11,8 @@ import AddExperience from './components/profile-form/AddExperience';
 import AddEducation from './components/profile-form/AddEducation';
 import PrivateRoute from './components/routing/PrivateRoute';
 import ProfileForm from './components/profile-form/ProfileForm';
+import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
 import { LOGOUT } from './actions/types';
 //Redux
 import { loadUser } from './actions/auth';
@@ -54,6 +56,14 @@ const App = () => {
           <Route
             path="login"
             element={<Login />}
+          />
+          <Route
+            path="profiles"
+            element={<Profiles />}
+          />
+          <Route
+            path="profile/:id"
+            element={<Profile />}
           />
           <Route
             path="dashboard"
