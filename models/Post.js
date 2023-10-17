@@ -42,13 +42,13 @@ const PostSchema = new Schema({
       },
       date: {
         type: Date,
-        defaul: Date.now
+        default: Date.now
       }
     }
   ],
   date: {
     type: Date,
-    defaul: Date.now
+    default: Date.now
   }
 });
 

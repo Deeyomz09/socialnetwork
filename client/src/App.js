@@ -13,6 +13,8 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import ProfileForm from './components/profile-form/ProfileForm';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import { LOGOUT } from './actions/types';
 //Redux
 import { loadUser } from './actions/auth';
@@ -84,6 +86,14 @@ const App = () => {
           <Route
             path="dashboard/add-education"
             element={<PrivateRoute component={AddEducation} />}
+          />
+          <Route
+            path="posts"
+            element={<PrivateRoute component={Posts} />}
+          />
+          <Route
+            path="posts/:id"
+            element={<PrivateRoute component={Post} />}
           />
           <Route
             path="/*"
