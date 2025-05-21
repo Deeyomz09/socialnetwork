@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://nananadiomz:Babebabe09@socialnetwork.wxqbeoj.mongodb.net/?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "87cc1739e29acba18ff8",
+  "githubSecret": "5dbb6fbb23c5b9544d96285d0e4b4a89a59aaeb8"
+}
