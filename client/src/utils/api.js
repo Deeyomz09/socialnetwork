@@ -1,12 +1,13 @@
-import axios from 'axios';
-import store from '../store';
-import { LOGOUT } from '../actions/types';
+import axios from "axios";
+import store from "../store";
+import { LOGOUT } from "../actions/types";
+const API_BASE_URL = "https://socialnetwork-ytq2.onrender.com";
 
 // Create an instance of axios
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
   headers: {
-    'Content-Type': 'application/json'
+    "Content-Type": "application/json"
   }
 });
 /*
