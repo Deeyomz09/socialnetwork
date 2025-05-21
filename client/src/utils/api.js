@@ -1,7 +1,8 @@
 import axios from "axios";
 import store from "../store";
 import { LOGOUT } from "../actions/types";
-const API_BASE_URL = "https://socialnetwork-ytq2.onrender.com";
+
+const API_BASE_URL = "https://socialnetwork-ytq2.onrender.com/api";
 
 // Create an instance of axios
 const api = axios.create({
