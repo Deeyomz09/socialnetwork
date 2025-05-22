@@ -1,28 +1,28 @@
-import React, { useEffect } from 'react';
-import Landing from './components/layout/Landing';
-import Navbar from './components/layout/Navbar';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Alert from './components/layout/Alert';
-import Dashboard from './components/dashboard/Dashboard';
-import NotFound from './components/layout/NotFound.js';
-import AddExperience from './components/profile-form/AddExperience';
-import AddEducation from './components/profile-form/AddEducation';
-import PrivateRoute from './components/routing/PrivateRoute';
-import ProfileForm from './components/profile-form/ProfileForm';
-import Profiles from './components/profiles/Profiles';
-import Profile from './components/profile/Profile';
-import Posts from './components/posts/Posts';
-import Post from './components/post/Post';
-import { LOGOUT } from './actions/types';
+import React, { useEffect } from "react";
+import Landing from "./components/layout/Landing";
+import Navbar from "./components/layout/Navbar";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Alert from "./components/layout/Alert";
+import Dashboard from "./components/dashboard/Dashboard";
+import NotFound from "./components/layout/NotFound.js";
+import AddExperience from "./components/profile-form/AddExperience";
+import AddEducation from "./components/profile-form/AddEducation";
+import PrivateRoute from "./components/routing/PrivateRoute";
+import ProfileForm from "./components/profile-form/ProfileForm";
+import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile";
+import Posts from "./components/posts/Posts";
+import Post from "./components/post/Post";
+import { LOGOUT } from "./actions/types";
 //Redux
-import { loadUser } from './actions/auth';
-import { Provider } from 'react-redux';
-import store from './store';
-import setAuthToken from './utils/setAuthToken';
+import { loadUser } from "./actions/auth";
+import { Provider } from "react-redux";
+import store from "./store";
+import setAuthToken from "./utils/setAuthToken";
 
-import './App.css';
+import "./App.css";
 
 const App = () => {
   useEffect(() => {
@@ -36,14 +36,14 @@ const App = () => {
     store.dispatch(loadUser());
 
     // log user out from all tabs if they log out in one tab
-    window.addEventListener('storage', () => {
+    window.addEventListener("storage", () => {
       if (!localStorage.token) store.dispatch({ type: LOGOUT });
     });
   }, []);
 
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename="/socialnetwork">
         <Navbar />
         <Alert />
         <Routes>
